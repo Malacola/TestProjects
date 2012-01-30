@@ -62,9 +62,15 @@ namespace TDD.Tests
 		[TestMethod]
 		public void TestMethod1()
 		{
-			//
-			// TODO: Add test logic here
-			//
+			var measurements = new List<Measurement>()
+			{
+				new Measurement() { HighValue = 10, LowValue = 1 }
+			};
+
+			var grouper = new SizeGrouper(1);
+			var groupedResults = grouper.Group(measurements);
+
+			Assert.AreEqual(1, groupedResults.Count);
 		}
 	}
 }
