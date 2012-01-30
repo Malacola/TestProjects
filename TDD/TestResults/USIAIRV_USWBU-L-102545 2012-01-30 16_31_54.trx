@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="d802d66c-946f-43e1-bb0b-419d55519fd3" name="USIAIRV@USWBU-L-102545 2012-01-30 16:31:54" runUser="AMERICAS\USIAIRV" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="ce56a872-60c8-4202-a207-e6391427b4c6">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="USIAIRV_USWBU-L-102545 2012-01-30 16_31_54">
+      <DeploymentItem filename="C:\Work\TestProjects\TDD\TDD\bin\Debug\TDD.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-01-30T16:31:54.7695471-07:00" queuing="2012-01-30T16:31:54.8025471-07:00" start="2012-01-30T16:31:54.8075471-07:00" finish="2012-01-30T16:31:55.0485471-07:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="c:\work\testprojects\tdd\tdd.tests\bin\debug\tdd.tests.dll" id="c0b6f529-13b2-6776-fe18-bbaf8f7f2a56">
+      <Execution id="e2eca984-d856-428f-9b41-1de5ce3b13da" />
+      <TestMethod codeBase="C:/Work/TestProjects/TDD/TDD.Tests/bin/Debug/TDD.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TDD.Tests.UnitTest1, TDD.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="c0b6f529-13b2-6776-fe18-bbaf8f7f2a56" executionId="e2eca984-d856-428f-9b41-1de5ce3b13da" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="e2eca984-d856-428f-9b41-1de5ce3b13da" testId="c0b6f529-13b2-6776-fe18-bbaf8f7f2a56" testName="TestMethod1" computerName="USWBU-L-102545" duration="00:00:00.0303933" startTime="2012-01-30T16:31:54.8135471-07:00" endTime="2012-01-30T16:31:55.0335471-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e2eca984-d856-428f-9b41-1de5ce3b13da">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;1&gt;. Actual:&lt;0&gt;. </Message>
+          <StackTrace>   at TDD.Tests.UnitTest1.TestMethod1() in C:\Work\TestProjects\TDD\TDD.Tests\UnitTest1.cs:line 73
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>
