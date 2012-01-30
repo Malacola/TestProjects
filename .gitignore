@@ -4,6 +4,8 @@
 /TestResults
 *.vspscc
 *.vssscc
+*.testsettings
+*.vsmdi
 deploy
 deploy/*
 *.suo
