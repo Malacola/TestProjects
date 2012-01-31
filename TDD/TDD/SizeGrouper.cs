@@ -18,7 +18,13 @@ namespace TDD.Tests
 		public IList<IList<Measurement>> Group(List<Measurement> measurements)
 		{
 			var result = new List<IList<Measurement>>();
-			result.Add(measurements);
+			int total = 0;
+			while (total < measurements.Count)
+			{
+				var group = measurements.Skip(total).Take(groupSize).ToList();
+				result.Add(group);
+				total += groupSize;
+			}
 			return result;
 		}
 	}

@@ -70,8 +70,37 @@ namespace TDD.Tests
 			var grouper = new SizeGrouper(1);
 			var groupedResults = grouper.Group(measurements);
 
-			Assert.AreEqual(1, groupedResults.Count);\
-			//test test
+			Assert.AreEqual(1, groupedResults.Count);
+		}
+
+		[TestMethod]
+		public void Grouping_list_of_two_by_one_produces_group_of_size_two()
+		{
+			var measurements = new List<Measurement>()
+									{
+										new Measurement() {HighValue = 10, LowValue = 1},
+										new Measurement() {HighValue = 9, LowValue = 2},
+									};
+			var grouper = new SizeGrouper(1);
+			var groupedResults = grouper.Group(measurements);
+
+			Assert.AreEqual(2, groupedResults.Count);
+		}
+
+		[TestMethod]
+		public void Grouping_list_of_four_by_two_produces_group_of_size_two()
+		{
+			var measurements = new List<Measurement>()
+									{
+										new Measurement() {HighValue = 10, LowValue = 1},
+										new Measurement() {HighValue = 9, LowValue = 2},
+										new Measurement() {HighValue = 10, LowValue = 3},
+										new Measurement() {HighValue = 10, LowValue =4}
+									};
+			var grouper = new SizeGrouper(2);
+			var groupedResults = grouper.Group(measurements);
+
+			Assert.AreEqual(2, groupedResults.Count);
 		}
 	}
 }
