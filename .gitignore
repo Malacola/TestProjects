@@ -1,11 +1,10 @@
 [Oo]bj/
 [Bb]in/
+[Tt]estResults/
 *.user
-/TestResults
 *.vspscc
 *.vssscc
 *.testsettings
-*.vsmdi
 deploy
 deploy/*
 *.suo
