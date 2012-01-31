@@ -70,7 +70,8 @@ namespace TDD.Tests
 			var grouper = new SizeGrouper(1);
 			var groupedResults = grouper.Group(measurements);
 
-			Assert.AreEqual(1, groupedResults.Count);
+			Assert.AreEqual(1, groupedResults.Count);\
+			//test test
 		}
 	}
 }
