@@ -62,10 +62,7 @@ namespace TDD.Tests
 		[TestMethod]
 		public void Grouping_list_of_one_by_one_produces_group_of_size_one()
 		{
-			var measurements = new List<Measurement>()
-			{
-				new Measurement() { HighValue = 10, LowValue = 1 }
-			};
+			var measurements = CreateMeasurementListOfSize(1);
 
 			var grouper = new SizeGrouper(1);
 			var groupedResults = grouper.Group(measurements);
@@ -76,11 +73,8 @@ namespace TDD.Tests
 		[TestMethod]
 		public void Grouping_list_of_two_by_one_produces_group_of_size_two()
 		{
-			var measurements = new List<Measurement>()
-									{
-										new Measurement() {HighValue = 10, LowValue = 1},
-										new Measurement() {HighValue = 9, LowValue = 2},
-									};
+			var measurements = CreateMeasurementListOfSize(2);
+
 			var grouper = new SizeGrouper(1);
 			var groupedResults = grouper.Group(measurements);
 
@@ -90,17 +84,19 @@ namespace TDD.Tests
 		[TestMethod]
 		public void Grouping_list_of_four_by_two_produces_group_of_size_two()
 		{
-			var measurements = new List<Measurement>()
-									{
-										new Measurement() {HighValue = 10, LowValue = 1},
-										new Measurement() {HighValue = 9, LowValue = 2},
-										new Measurement() {HighValue = 10, LowValue = 3},
-										new Measurement() {HighValue = 10, LowValue =4}
-									};
+			var measurements = CreateMeasurementListOfSize(4);
 			var grouper = new SizeGrouper(2);
 			var groupedResults = grouper.Group(measurements);
 
 			Assert.AreEqual(2, groupedResults.Count);
+		}
+
+		private List<Measurement> CreateMeasurementListOfSize(int size)
+		{
+			var result = new List<Measurement>();
+			for (int i = 0; i < size; i++)
+				result.Add(new Measurement() { HighValue = 10, LowValue = 1 });
+			return result;
 		}
 	}
 }
