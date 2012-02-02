@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TDD.Tests
 {
-	public class SizeGrouper
+	public class SizeGrouper : IGrouper
 	{
 		private int groupSize;
 
@@ -15,17 +15,14 @@ namespace TDD.Tests
 			this.groupSize = groupSize;
 		}
 
-		public IList<IList<Measurement>> Group(List<Measurement> measurements)
+		public IEnumerable<IEnumerable<Measurement>> Group(IList<Measurement> measurements)
 		{
-			var result = new List<IList<Measurement>>();
 			int total = 0;
 			while (total < measurements.Count)
 			{
-				var group = measurements.Skip(total).Take(groupSize).ToList();
-				result.Add(group);
+				yield return measurements.Skip(total).Take(groupSize);
 				total += groupSize;
 			}
-			return result;
 		}
 	}
 }

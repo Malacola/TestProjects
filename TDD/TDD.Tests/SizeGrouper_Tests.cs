@@ -67,7 +67,7 @@ namespace TDD.Tests
 			var grouper = new SizeGrouper(1);
 			var groupedResults = grouper.Group(measurements);
 
-			Assert.AreEqual(1, groupedResults.Count);
+			Assert.AreEqual(1, groupedResults.Count());
 		}
 
 		[TestMethod]
@@ -78,7 +78,7 @@ namespace TDD.Tests
 			var grouper = new SizeGrouper(1);
 			var groupedResults = grouper.Group(measurements);
 
-			Assert.AreEqual(2, groupedResults.Count);
+			Assert.AreEqual(2, groupedResults.Count());
 		}
 
 		[TestMethod]
@@ -88,7 +88,7 @@ namespace TDD.Tests
 			var grouper = new SizeGrouper(2);
 			var groupedResults = grouper.Group(measurements);
 
-			Assert.AreEqual(2, groupedResults.Count);
+			Assert.AreEqual(2, groupedResults.Count());
 		}
 
 		private List<Measurement> CreateMeasurementListOfSize(int size)
