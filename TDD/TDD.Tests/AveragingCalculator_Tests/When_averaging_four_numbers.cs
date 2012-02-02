@@ -22,6 +22,7 @@ namespace TDD.Tests.AveragingCalculator_Tests
 		}
 
 		[TestMethod]
+		[TestCategory("AveragingCalculator")]
 		public void then_the_high_average_is_correct()
 		{
 			var expectedAverage = AverageHigh(measurements);
