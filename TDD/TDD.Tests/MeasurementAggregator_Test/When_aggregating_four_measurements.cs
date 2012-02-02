@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace TDD.Tests.MeasurementAggregator_Tests
+namespace TDD.Tests.MeasurementAggregator_Test
 {
 	[TestClass]
     public class When_aggregating_four_measurements
@@ -13,7 +13,7 @@ namespace TDD.Tests.MeasurementAggregator_Tests
  
         public When_aggregating_four_measurements()
         {
-            _aggregator = new MeasurementAggregator(GetData());
+            _aggregator = new MeasurementAggregator(Mother.Get4Measurements());
         }
 
         [TestMethod]
@@ -53,17 +53,5 @@ namespace TDD.Tests.MeasurementAggregator_Tests
             Assert.AreEqual(10.0, first.HighValue, 0.005);
             Assert.AreEqual(1.0, first.LowValue, 0.005);
         }
-
-        private IList<Measurement> GetData()
-        {
-            return new List<Measurement>
-                       {
-                           new Measurement() {HighValue = 10.0, LowValue = 1.0},
-                           new Measurement() {HighValue = 5.0, LowValue = 2.0},
-                           new Measurement() {HighValue = 2.0, LowValue = 1.0},
-                           new Measurement() {HighValue = 10.0, LowValue = 4.0}
-                       };
-        }
-
     }
 }

@@ -46,9 +46,11 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AveragingCalculator_Tests\When_averaging_four_numbers.cs" />
+    <Compile Include="Mother.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SizeGrouper_Tests.cs" />
-    <Compile Include="When_aggregating_four_measurements.cs" />
+    <Compile Include="MeasurementAggregator_Test\When_aggregating_four_measurements.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TDD\TDD.csproj">
