@@ -18,6 +18,8 @@ post-build*
 _ReSharper.*
 deploy-to-ec2*
 *.cachefile
+_UpgradeReport_Files/
+UpgradeLog.*
 
 #OS junk files
 [Tt]humbs.db
