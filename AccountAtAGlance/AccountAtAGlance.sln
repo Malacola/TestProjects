@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 11
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountAtAGlance", "AccountAtAGlance\AccountAtAGlance.csproj", "{3C6B7514-E1EE-4725-9C27-6B9D92A377B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountAtAGlance.Model", "AccountAtAGlance.Model\AccountAtAGlance.Model.csproj", "{D4616B5C-0D89-4FF7-A1AE-7E04B83403F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountAtAGlance.Repository", "AccountAtAGlance.Repository\AccountAtAGlance.Repository.csproj", "{95ED257E-D261-415F-B556-7D165F31D284}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C6B7514-E1EE-4725-9C27-6B9D92A377B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C6B7514-E1EE-4725-9C27-6B9D92A377B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C6B7514-E1EE-4725-9C27-6B9D92A377B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C6B7514-E1EE-4725-9C27-6B9D92A377B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95ED257E-D261-415F-B556-7D165F31D284}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95ED257E-D261-415F-B556-7D165F31D284}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95ED257E-D261-415F-B556-7D165F31D284}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95ED257E-D261-415F-B556-7D165F31D284}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4616B5C-0D89-4FF7-A1AE-7E04B83403F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4616B5C-0D89-4FF7-A1AE-7E04B83403F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4616B5C-0D89-4FF7-A1AE-7E04B83403F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4616B5C-0D89-4FF7-A1AE-7E04B83403F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
