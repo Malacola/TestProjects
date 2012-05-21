@@ -3,6 +3,7 @@
 [Tt]estResults/
 Trash/
 VelocityWeb/
+Backup/
 *.user
 *.vspscc
 *.vssscc
