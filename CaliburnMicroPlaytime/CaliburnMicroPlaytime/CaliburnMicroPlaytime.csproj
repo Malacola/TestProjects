@@ -66,6 +66,10 @@
       <DependentUpon>AppView.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppViewModel.cs" />
+    <Compile Include="ColorView.xaml.cs">
+      <DependentUpon>ColorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ColorViewModel.cs" />
     <Compile Include="MySuperBootStrapper.cs" />
     <Compile Include="ShellViewModel.cs" />
     <Compile Include="App.xaml.cs">
@@ -75,6 +79,10 @@
     <Compile Include="AppBootstrapper.cs" />
     <Compile Include="IShell.cs" />
     <Page Include="AppView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ColorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

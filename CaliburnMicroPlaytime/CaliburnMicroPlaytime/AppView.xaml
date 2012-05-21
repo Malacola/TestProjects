@@ -8,15 +8,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Width="300" Height="300" Background="LightBlue">
-        <RepeatButton Content="Up" Margin="5" VerticalAlignment="Top">
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="Click">
-                    <cal:ActionMessage MethodName="IncrementCount">
-                        <cal:Parameter Value="5" />
-                    </cal:ActionMessage>
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
-        </RepeatButton>
-        <TextBlock Name="Count" Margin="20" FontSize="150" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Column="1" Width="100" Height="100" Fill="{Binding Color}" />
+        <ContentControl Name="ColorModel" Margin="10" />
     </Grid>
 </UserControl>

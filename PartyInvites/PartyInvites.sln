@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 11
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartyInvites", "PartyInvites\PartyInvites.csproj", "{8AAB544A-530B-46E4-9C8D-3410CDCE3D47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{B9C5AF90-1D7B-4DB5-85C2-99DE668AF338}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 		{8AAB544A-530B-46E4-9C8D-3410CDCE3D47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AAB544A-530B-46E4-9C8D-3410CDCE3D47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AAB544A-530B-46E4-9C8D-3410CDCE3D47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9C5AF90-1D7B-4DB5-85C2-99DE668AF338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9C5AF90-1D7B-4DB5-85C2-99DE668AF338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9C5AF90-1D7B-4DB5-85C2-99DE668AF338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9C5AF90-1D7B-4DB5-85C2-99DE668AF338}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
