@@ -8,6 +8,8 @@ Backup/
 *.vspscc
 *.vssscc
 *.testsettings
+*.sublime-project
+*.sublime-workspace
 deploy
 deploy/*
 *.suo
