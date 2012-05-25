@@ -10,6 +10,8 @@ deploy
 deploy/*
 *.suo
 *.cache
+*.sublime-project
+*.sublime-workspace
 packages/
 msbuild.log
 artifacts/log

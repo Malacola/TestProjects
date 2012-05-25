@@ -1,0 +1,54 @@
+//Your basic module. Nothing fancy, really just for namespacing...
+var SomeFuncModule = {
+    // Here's a function that returns a function; contrast that with the
+    // square func below, which is immediately invoked...
+    someFunc : function(x){
+        var wha = 2;
+        return function(x){
+            return x*x*wha;
+        };
+    },
+};
+
+var SquareFuncModule = {
+    // Square returns a func too, but it's immediately invoked when the module loads;
+    // it returns its result rather than the actual function that produced the result
+    square: (function(x){
+        var someVal = 3;
+        return function(x){
+            return x*x + someVal; 
+        }
+    }()),   
+};
+
+(function(){
+    var x;
+    x = 'I is a string!';
+    var that = this;
+})(this);
+
+// We can call someFunc like this...
+console.log(SomeFuncModule.someFunc()(3));
+
+// Or set its return to some variable and invoke it normally
+var aFunc = SomeFuncModule.someFunc();
+console.log(aFunc(3));
+
+// Square is actually invoked when the module loads
+console.log(SquareFuncModule.square(3));
+
+function Derp(){
+    var herpDerp = "herp a derp";
+
+    (function (){
+        console.log(this);
+        console.log(this.herpDerp);
+    })();
+
+    (function (){
+        console.log(this);
+        console.log(herpDerp);
+    }).call(this);
+}
+
+var herp = new Derp;
