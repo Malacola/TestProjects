@@ -1,7 +1,6 @@
 //Your basic module. Nothing fancy, really just for namespacing...
 var SomeFuncModule = {
-    // Here's a function that returns a function; contrast that with the
-    // square func below, which is immediately invoked...
+
     someFunc : function(x){
         var wha = 2;
         return function(x){
@@ -52,3 +51,17 @@ function Derp(){
 }
 
 var herp = new Derp;
+
+var SomeClass = L.Class.extend({
+    
+    initialize: function(someVal){
+        this.val = someVal;
+    },
+
+    printVal: function(){
+        console.log(this.val);
+    }
+});
+
+var myClass = new SomeClass('YAY');
+myClass.printVal();

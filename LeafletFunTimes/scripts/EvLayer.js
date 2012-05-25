@@ -1,3 +1,3 @@
-EvLayer = L.GeoJSON.Extend({
+EvLayer = L.Class.Extend({
 	
 });
