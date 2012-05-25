@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href=".//scripts/lib/leaflet/leaflet.css" />
+</head>
+<body>
+	<div id="map" style="height:500px"></div>
+	<script type="text/javascript" src="./scripts/lib/leaflet/leaflet-src.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+	<script type="text/javascript" src="./data/plants.js"></script>
+	<script type="text/javascript" src="./scripts/EvLayer.js"></script>
+
+	<script type="text/javascript">
+		var map = new L.Map('map', {
+			center: new L.LatLng(39.937, -105.0691),
+            zoom: 10
+		});
+
+		var cloudMade = new L.TileLayer("http://{s}.tiles.mapbox.com/v3/mapbox.mapbox-light/{z}/{x}/{y}.png", {
+            attribution: 'Map data &copy [...]',
+            maxZoom: 18
+        });
+
+        map.addLayer(cloudMade);
+
+        var geoJSONLayer = new L.GeoJSON(PlantData.getPlants(), {
+        	pointToLayer: function(latlng){
+        		return new L.CircleMarker(latlng);
+        	}
+        });
+
+        map.addLayer(geoJSONLayer);
+	</script>
+</body>
+</html>
