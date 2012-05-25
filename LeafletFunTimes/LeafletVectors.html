@@ -6,10 +6,11 @@
 </head>
 <body>
 	<div id="map" style="height:500px"></div>
-	<script type="text/javascript" src="./scripts/lib/leaflet/leaflet-src.js"></script>
+	<script type="text/javascript" src="scripts/lib/leaflet/leaflet-src.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-	<script type="text/javascript" src="./data/plants.js"></script>
-	<script type="text/javascript" src="./scripts/EvLayer.js"></script>
+	<script type="text/javascript" src="scripts/EvLayer.js"></script>
+	<script type="text/javascript" src="scripts/lib/lvector/lvector-include.js"></script>
+        <script type="text/json" src="data/plants.json"></script>
 
 	<script type="text/javascript">
 		var map = new L.Map('map', {
@@ -24,13 +25,30 @@
 
         map.addLayer(cloudMade);
 
-        var geoJSONLayer = new L.GeoJSON(PlantData.getPlants(), {
-        	pointToLayer: function(latlng){
-        		return new L.CircleMarker(latlng);
-        	}
-        });
+        var ags_lightRail = new lvector.AGS({
+        	url: "http://maps.rtd-denver.com/ArcGIS/rest/services/SystemMapLiteGoogleVectors/MapServer/1",
+        	fields: "*",
+        	scaleRange: [13, 20],
+        	showAll: true,
+        	symboloy: {
+        		type: "single",
+        		vectorOptions: {
+        			weight: 4,
+        			opacity: 0.8,
+        			color: "#004a00"
+        		}
+        	},
+        	popupTemplate: '<div class="iw-content"><h3>Light Rail Line</h3><table class="condensed-table"><tr><th>Route</th><td>{ROUTE}</td></tr></table></div>'
+        })
 
-        map.addLayer(geoJSONLayer);
+        ags_lightRail.setMap(map);
+
+        function setLayer(data){
+                var layer = new L.Layer.GeoJSON(data);
+                map.addLayer(layer);
+        };
+        
+
 	</script>
 </body>
 </html>
