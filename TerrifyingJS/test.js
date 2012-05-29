@@ -63,5 +63,10 @@ var SomeClass = L.Class.extend({
     }
 });
 
+L.Util.extend(SomeClass, {
+    
+
+});
+
 var myClass = new SomeClass('YAY');
 myClass.printVal();
