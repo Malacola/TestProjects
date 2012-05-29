@@ -6,31 +6,98 @@
 </head>
 <body>
 	<div id="map" style="height:500px"></div>
-	<script type="text/javascript" src="./scripts/lib/leaflet/leaflet-src.js"></script>
+	<script type="text/javascript" src="scripts/lib/leaflet/leaflet-src.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-	<script type="text/javascript" src="./data/plants.js"></script>
-	<script type="text/javascript" src="./scripts/EvLayer.js"></script>
+	<script type="text/javascript" src="scripts/EvLayer.js"></script>
+	<script type="text/javascript" src="scripts/lib/lvector/lvector-include.js"></script>
+        <script type="text/javascript" src="data/plants.js"></script>
 
 	<script type="text/javascript">
-		var map = new L.Map('map', {
-			center: new L.LatLng(39.937, -105.0691),
-            zoom: 10
-		});
+        $(function(){
 
-		var cloudMade = new L.TileLayer("http://{s}.tiles.mapbox.com/v3/mapbox.mapbox-light/{z}/{x}/{y}.png", {
-            attribution: 'Map data &copy [...]',
-            maxZoom: 18
+                var map = new L.Map('map', {
+                             center: new L.LatLng(39.937, -105.0691),
+                             zoom: 10
+                });
+
+                var cloudMade = new L.TileLayer("http://{s}.tiles.mapbox.com/v3/mapbox.mapbox-light/{z}/{x}/{y}.png", {
+                            attribution: 'Map data &copy [...]',
+                            maxZoom: 18
+                });
+
+                map.addLayer(cloudMade);
+
+                var ags_lightRail = new lvector.AGS({
+                        url: "http://maps.rtd-denver.com/ArcGIS/rest/services/SystemMapLiteGoogleVectors/MapServer/1",
+                        fields: "*",
+                        scaleRange: [13, 20],
+                        showAll: true,
+                        symboloy: {
+                                type: "single",
+                                vectorOptions: {
+                                        weight: 4,
+                                        opacity: 0.8,
+                                        color: "#004a00"
+                                }
+                        },
+                        popupTemplate: '<div class="iw-content"><h3>Light Rail Line</h3><table class="condensed-table"><tr><th>Route</th><td>{ROUTE}</td></tr></table></div>'
+                })
+
+                ags_lightRail.setMap(map);
+
+
+                var geojsonMarkerOptions = {
+                    radius: 8,
+                    fillColor: "#ff7800",
+                    color: "#000",
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                };
+
+                // var layer = new L.GeoJSON(PlantData.getPlants(), {
+                //         pointToLayer: function(latlng){
+                //                 return new L.CircleMarker(latlng, geojsonMarkerOptions);
+                //         }
+                // });
+
+                // map.addLayer(layer);
+
+                var evLayer = new EvLayer(PlantData.getPlants(), {
+                        property: "capacity",
+                        symbology: [
+                        {
+                                range: [1,50],
+                                vectorOptions: {
+                                        radius: 5,
+                                        weight: 0,
+                                        fillOpacity: 1
+                                }
+                        },
+                        {
+                                range: [51,100],
+                                vectorOptions: {
+                                        radius: 20,
+                                        fillColor: "#ff7800",
+                                        fillOpacity: 0.8
+                                }
+                        },
+                        {
+                                range: [101, 1000],
+                                vectorOptions: {
+                                        radius: 35,
+                                        fillColor: "#000"
+                                }
+                        },
+                        ],
+                        pointToLayer: function(latlng, markerOptions){
+                                return new L.CircleMarker(latlng, markerOptions);
+                        }
+                });
+
+                map.addLayer(evLayer);
+
         });
-
-        map.addLayer(cloudMade);
-
-        var geoJSONLayer = new L.GeoJSON(PlantData.getPlants(), {
-        	pointToLayer: function(latlng){
-        		return new L.CircleMarker(latlng);
-        	}
-        });
-
-        map.addLayer(geoJSONLayer);
-	</script>
+        </script>
 </body>
 </html>
