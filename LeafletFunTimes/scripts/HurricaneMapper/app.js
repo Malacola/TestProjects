@@ -9,10 +9,7 @@
     AppRouter = router.AppRouter;
     return App = {
       start: function() {
-        new AppRouter();
-        return Backbone.history.start({
-          pushState: true
-        });
+        return new AppRouter();
       }
     };
   });

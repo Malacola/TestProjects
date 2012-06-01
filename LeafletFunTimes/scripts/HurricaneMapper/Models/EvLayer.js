@@ -24,14 +24,13 @@
         }
       }
     ];
-    plants = new EvLayer(PlantData.getPlants(), {
+    return plants = new EvLayer(PlantData.getPlants(), {
       property: 'capacity',
       symbology: symbologyOtions,
       pointToLayer: function(latlng, markerOptions) {
         return new L.CircleMarker(latlng, markerOptions);
       }
     });
-    return plants;
   });
 
 }).call(this);
