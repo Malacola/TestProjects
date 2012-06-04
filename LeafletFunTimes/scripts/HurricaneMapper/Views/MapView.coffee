@@ -1,9 +1,8 @@
 define (require)->
-	Backbone = require 'backbone'
-	EvLayer = require 'Models/EvLayer'
+	Plants = require 'Models/Plants'
 
 	MapView = Backbone.View.extend
-		el: "div#map",
+		el: "div#map"
 
 		initialize: ->
 			@mapProvider = @options.mapProvider
@@ -14,10 +13,11 @@ define (require)->
 			@mapProvider.setView
 				lat: @initialCenter.lat
 				lon: @initialCenter.lon
-				zoomLevel: 13
+				zoomLevel: 10
 
 		render: ->
 			@mapProvider.createMap(@el.id)
-			@mapProvider.addLayer(EvLayer)
+			@mapProvider.addLayer(Plants)
 			@setInitialView()
+
 	return MapView

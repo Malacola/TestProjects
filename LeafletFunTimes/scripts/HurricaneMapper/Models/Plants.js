@@ -2,8 +2,7 @@
 (function() {
 
   define(['../../EvLayer', 'PlantData'], function(EvLayer, PlantData) {
-    var L, plants, symbologyOtions;
-    L = require('leaflet');
+    var plants, symbologyOtions;
     symbologyOtions = [
       {
         range: [1, 50],
@@ -13,21 +12,31 @@
       }, {
         range: [51, 100],
         vectorOptions: {
-          radius: 20,
-          fillColor: "#ff7800"
+          radius: 10
         }
       }, {
         range: [101, 1000],
         vectorOptions: {
-          radius: 35,
-          fillColor: "#000"
+          radius: 15
         }
       }
     ];
     return plants = new EvLayer(PlantData.getPlants(), {
       property: 'capacity',
       symbology: symbologyOtions,
+      colorScheme: 'YlOrRd',
       pointToLayer: function(latlng, markerOptions) {
+        if (markerOptions) {
+          markerOptions.fillOpacity = 0.8;
+          markerOptions.stroke = false;
+        } else {
+          markerOptions = {
+            fillOpacity: 0.8,
+            radius: 3,
+            stroke: false,
+            fillColor: 'white'
+          };
+        }
         return new L.CircleMarker(latlng, markerOptions);
       }
     });

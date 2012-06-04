@@ -1,4 +1,4 @@
-define(['leaflet'], function(L) {
+define(['ColorBrewer'], function() {
 
 	EvLayer = L.GeoJSON.extend({
 		options: {
@@ -7,7 +7,8 @@ define(['leaflet'], function(L) {
 			scaleRange: null,
 			defaultSymbol: null,
 			property: null,
-			symbology: null
+			symbology: null,
+			colorScheme: null
 		},
 
 		initialize: function(geojson, options){
@@ -15,6 +16,9 @@ define(['leaflet'], function(L) {
 
 			this._geojson = geojson;
 			this._layers = {};
+
+			if (this.options.symbology)
+				this.setColorInterpolation();
 
 			if (geojson){
 				this.addGeoJSON(geojson);
@@ -56,6 +60,25 @@ define(['leaflet'], function(L) {
 			});
 
 			this.addLayer(layer);
+		},
+
+		setColorInterpolation: function() {
+			if (!this.options.colorScheme){ 
+				return;
+			}
+
+			var bins = this.options.symbology.length;
+			if (!(bins >= 3)){
+				console.log('Need at least 3 symbology ranges');
+				return;
+			}
+
+			var interpolation = colorbrewer[this.options.colorScheme][bins]
+
+			this.options.symbology = _.map(this.options.symbology, function(symbology, key){
+				symbology.vectorOptions.fillColor = interpolation[key];
+				return symbology;
+			});
 		},
 
 		setAttributes: function(e){

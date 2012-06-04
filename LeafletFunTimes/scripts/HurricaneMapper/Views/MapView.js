@@ -2,9 +2,8 @@
 (function() {
 
   define(function(require) {
-    var Backbone, EvLayer, MapView;
-    Backbone = require('backbone');
-    EvLayer = require('Models/EvLayer');
+    var MapView, Plants;
+    Plants = require('Models/Plants');
     MapView = Backbone.View.extend({
       el: "div#map",
       initialize: function() {
@@ -19,12 +18,12 @@
         return this.mapProvider.setView({
           lat: this.initialCenter.lat,
           lon: this.initialCenter.lon,
-          zoomLevel: 13
+          zoomLevel: 10
         });
       },
       render: function() {
         this.mapProvider.createMap(this.el.id);
-        this.mapProvider.addLayer(EvLayer);
+        this.mapProvider.addLayer(Plants);
         return this.setInitialView();
       }
     });

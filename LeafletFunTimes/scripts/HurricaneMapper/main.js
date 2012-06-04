@@ -8,7 +8,8 @@
       'underscore': '../lib/underscore/underscore',
       'backbone': '../lib/backbone/backbone',
       'leaflet': '../lib/leaflet/leaflet-src',
-      'PlantData': '../../data/plants'
+      'PlantData': '../../data/plants',
+      'ColorBrewer': '../ColorBrewer'
     },
     shim: {
       'app': ['jquery'],
@@ -24,6 +25,9 @@
       },
       'PlantData': {
         exports: 'PlantData'
+      },
+      'ColorBrewer': {
+        exports: 'ColorBrewer'
       }
     }
   });

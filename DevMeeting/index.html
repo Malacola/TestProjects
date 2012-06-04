@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Backbone.js: What the cool kids use</title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+</head>
+<body>
+	
+	<div class="header"></div>
+
+	<div class="container-fluid">
+<!-- 		<div class="row-fluid">
+			<div class="span3">
+				<div class="well sidebar-nav">
+					<ul class="nav nav-list">
+						<li class="nav-header">
+							Examples
+						</li>
+						<li><a href="#">Example 1</a></li>
+						<li><a href="#">Example 2</a></li>
+						<li><a href="#">Example 3</a></li>
+					</ul>
+				</div>
+			</div> -->
+			<div class="span9">
+				<div class="hero-unit">
+					<h1>Backbone.js</h1>
+					<p>Client side MVC for great justice</p>
+				</div>
+				<div class="row" id="content">
+					<div class="span12" id="content"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/template" id="album-template">
+		<h1><%= artist %></h1>
+		<ul class="nav nav-list">
+			<li class="nav-header"><%= title %></li>
+			<% _.each(tracks, function(track) { %>
+				<li><a href="#"><%= track.title %></a></li>
+			<% }); %>
+		</ul>
+	</script>
+	<script type="text/template" id="library-template">
+		<h1>Music Library</h1>
+		<ul class="albums"></ul>
+	</script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+	<script type="text/javascript" src="lib/underscore.js"></script>
+	<script type="text/javascript" src="lib/backbone.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

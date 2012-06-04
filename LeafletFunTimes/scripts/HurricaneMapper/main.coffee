@@ -6,6 +6,7 @@ requirejs.config
 		'backbone'   : '../lib/backbone/backbone'
 		'leaflet'    : '../lib/leaflet/leaflet-src'
 		'PlantData'  : '../../data/plants'
+		'ColorBrewer': '../ColorBrewer'
 	shim:
 		'app'        : ['jquery']
 		'underscore' : 
@@ -17,6 +18,8 @@ requirejs.config
 			exports: 'L'
 		'PlantData'  :
 		    exports: 'PlantData'
+		'ColorBrewer':
+			exports: 'ColorBrewer'
 
 require ['app', 'jquery'], (App, $) ->
 	$ -> App.start()
